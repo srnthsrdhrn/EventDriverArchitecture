@@ -1,17 +1,12 @@
 package io.srinath.testing;
 
-import android.app.usage.UsageEvents;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
 
 import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 
-import java.io.IOException;
 import java.util.List;
 
 import io.srinath.testing.Models.Events;
@@ -22,7 +17,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,14 +48,6 @@ public class MainActivity extends AppCompatActivity {
             });
             return null;
         }
-    }
-    @Subscribe(threadMode =  ThreadMode.ASYNC)
-    public void onEventRecieve(Events events){
-        Toast.makeText(this,events.toString(),Toast.LENGTH_LONG).show();
-    }
-    @Subscribe(threadMode = ThreadMode.ASYNC)
-    public void onStringRecieve(String string ){
-        Toast.makeText(this,string,Toast.LENGTH_LONG).show();
     }
 
     @Override
